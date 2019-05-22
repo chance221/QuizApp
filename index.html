@@ -11,26 +11,28 @@
 </head>
 <body>
     <h1>Cooking Quiz App</h1>
-    <img  class="questionImage" src="media/chickenTemp.jpg" alt= "cooked chicken">
-    <form class="quizz-app-form" action="/some-server-endpoint" method="post">
-        <fieldset name = "question-and-answer">
-            <legend class="questions">Question 1 of 10</legend>
-            <label for="question">
-               <h2>What is the proper temperature of a fully cooked chicken?</h2> 
-                    <input type ="radio" name="answer-list" name ="A" > A. 200 &#176 <br>
-                    <input type ="radio" name="answer-list" name ="B" > B. 165 &#176 <br>
-                    <input type ="radio" name="answer-list" name ="C" > C. 200 &#176 <br>
-                    <input type ="radio" name="answer-list" name ="D" > D. 200 &#176 <br>
-            </label>
-            <div class = "anwser-submit">
-                <button class= "answer-submit. js-answer-submit">
-                    <span class="btn-label">Check Answer and Move to Next Question</span>
-                </button>
-            </div>
-
-            
-        </fieldset>
-    </form>
+    <div class = "quizz-space js-quiz-space">
+        <img  class="questionImage" src="media/chickenTemp.jpg" alt= "cooked chicken">
+        <form class="quizz-app-form" action="/some-server-endpoint" method="post">
+            <fieldset name = "question-and-answer">
+                <legend class="questions">Question 1 of 10</legend>
+                <label for="question">
+                <h2>What is the proper temperature of a fully cooked chicken?</h2> 
+                        <input type ="radio" name="answer-list" id="A" > A. 200 &#176 <br>
+                        <input type ="radio" name="answer-list" id="B" > B. 165 &#176 <br>
+                        <input type ="radio" name="answer-list" id ="C" > C. 200 &#176 <br>
+                        <input type ="radio" name="answer-list" id ="D" > D. 200 &#176 <br>
+                </label>
+                <div class = "anwser-submit">
+                    <button class= "answer-submit. js-answer-submit">
+                        <span class="btn-label">Check Answer and Move to Next Question</span>
+                    </button>
+                </div>
+        
+                
+            </fieldset>
+        </form>
+    </div>
 
 </body>
 </html>
