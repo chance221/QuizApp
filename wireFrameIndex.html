@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/wireFrame.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Prompt&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Cooking Quiz App</h1>
+    <img  class="questionImage" src="media/chickenTemp.jpg"/>
+    <form class="quizz-app-form" action="/some-server-endpoint" method="post">
+        <fieldset name = "question-and-answer">
+            <legend class="questions">Question 1 of 10</legend>
+            <label for="question">
+               <h2>What is the proper temperature of a fully cooked chicken?</h2> 
+                    <input type ="radio" name="answer-list" name ="A" > A. 200 &#176 <br>
+                    <input type ="radio" name="answer-list" name ="B" > B. 165 &#176 <br>
+                    <input type ="radio" name="answer-list" name ="C" > C. 200 &#176 <br>
+                    <input type ="radio" name="answer-list" name ="D" > D. 200 &#176 <br>
+            </label>
+            <div class = "anwser-submit">
+                <button class= "answer-submit. js-answer-submit">
+                    <span class="btn-label">Check Answer and Move to Next Question</span>
+                </button>
+            </div>
+
+            
+        </fieldset>
+    </form>
+
+</body>
+</html>
