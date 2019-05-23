@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Cooking Quiz App</h1>
-    <div class = "quizz-space js-quiz-space">
+    <section role="main" class = "quizz-space js-quiz-space">
         <img  class="questionImage" src="media/chickenTemp.jpg" alt= "cooked chicken">
         <form class="quizz-app-form" action="/some-server-endpoint" method="post">
             <fieldset name = "question-and-answer">
@@ -24,18 +24,20 @@
                         <input type ="radio" name="answer-list" id ="D" > D. 200 &#176 <br>
                 </label>
                 <div class = "anwser-submit">
-                    <button class= "answer-submit js-answer-submit">
+                    <button class= "answer-submit-btn js-answer-submit-btn">
                         <span class="btn-label">Check Answer and Move to Next Question</span>
                     </button>
-                    <button class= "restart js-restart">
+                </div>
+                <div class = "restart js-restart hide">
+                    <button class= "restart-btn js-restart-btn">
                             <span class="btn-label">Restart Quiz</span>
                     </button>
                 </div>
-        
                 
             </fieldset>
         </form>
-    </div>
+    </section>
+    <div class = "answer-section js-answersection"></div>
 <script src = "js/quizzApp.js"></script>
 </body>
 </html>

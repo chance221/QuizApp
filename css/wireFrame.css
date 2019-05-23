@@ -41,6 +41,16 @@ body {
     display:block;
 }
 
+.restart{
+    text-align:center;
+    padding: 15px;
+    display:block;
+}
+
+.hide{
+    display:none;
+}
+
 @media screen and (min-width: 400px){
     body{
         display:flex;
