@@ -51,6 +51,12 @@ body {
     display:none;
 }
 
+.answer-space{
+    text-align:center;
+    padding: 15px;
+    display:block; 
+}
+
 @media screen and (min-width: 400px){
     body{
         display:flex;
