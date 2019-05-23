@@ -1,6 +1,6 @@
 'use strict';
 
-const appQuestions = [
+const APPQUESTIONS = [
     {
         id:1,
         question:`What is the proper temperature of a fully cooked chicken?"`,
@@ -121,7 +121,7 @@ const appQuestions = [
 
 ]
 
-const appAnswers = [
+const APPANSWERS = [
     `165 &#176`,
     4,
     `145 &#176`,
@@ -145,3 +145,33 @@ const appAnswers = [
 //6. Need to write a function to check on the answers. (function needs to give feedback to current correct answer and current score)
 //7. Need to write a function to render the correct content to the screen. (Cannot allow users to go back or restart until the end)
 //8. 
+
+//still need to make sure string literals are updated
+function questionTemp(questions, answers, questionsAnswered){
+    return
+    `<form class="quizz-app-form" action="/some-server-endpoint" method="post">
+    <fieldset name = "question-and-answer">
+        <legend class="questions">Question 1 of 10</legend>
+        <label for="question">
+        <h2>What is the proper temperature of a fully cooked chicken?</h2> 
+                <input type ="radio" name="answer-list" id="A" > A. 200 &#176 <br>
+                <input type ="radio" name="answer-list" id="B" > B. 165 &#176 <br>
+                <input type ="radio" name="answer-list" id ="C" > C. 200 &#176 <br>
+                <input type ="radio" name="answer-list" id ="D" > D. 200 &#176 <br>
+        </label>
+        <div class = "answer-submit">
+            <button class= "answer-submit-btn js-answer-submit-btn" type="submit">
+                <span class="btn-label">Check Answer and Move to Next Question</span>
+            </button>
+        </div>
+        <div class="answer-space"> 
+            <p>0 out of 0 answers correct so far</p>
+        </div>
+        <div class = "restart js-restart hide">
+            <button class= "restart-btn js-restart-btn">
+                    <span class="btn-label">Restart Quiz</span>
+            </button>
+        </div>
+    </fieldset>
+</form>`
+}
