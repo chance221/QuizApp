@@ -3,27 +3,69 @@
     font-family: 'Gothic A1', sans-serif;
 }
 
+.feedback-page{
+    
+    flex-direction: column;
+    align-content: center; 
+    justify-content: space-between;
+    
+    align-self:center;
+}
 
 h1{
     font-family: 'Prompt', sans-serif;
     padding-bottom: 2px;
-    background-color:blue;
-    color: whitesmoke;
+    background-color:#FFD0B8;
+    color:rgba(33, 96, 148, 0.664);
+    margin-top: -10px;
+    text-align: center
 }
 
 body {
     display: inline-block;
     margin:0;
     text-align:center;
-    background-color:grey
+    background-color:#5D5DB3;
+    color:white
+}
+
+button{
+    height: 50px;
+    width: 200px;
+    border-radius: 12px;
+    border:1px solid #d6bcd6;
+    cursor: pointer;
+    color:black;
+    text-decoration:none;
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    box-shadow: 3px 4px 0px 0px #899599;
+    text-shadow:0px 1px 0px #e1e2ed;
+    font-size: 20px;
+
 }
 
 .questionImage{
-    width: 80vw;
-    /* height: 40vh; */
+    max-width: 50vw;
+    max-height: 30vh; 
     margin: 10px;
+    margin-bottom: 30px;
     border-radius: 50%;
-    border: 5px solid black;
+    border: 2px solid #FFD0B8; 
+}
+
+fieldset{
+    border:0;
+}
+
+.feedbackImage{
+    border: 2px solid #FFD0B8; 
+    margin-bottom:100px;
+    margin-top: 100px;
+    text-align:center;
+}
+
+.quizz-space{
+    align-self:center;
 }
 
 .quizz-app-form{
@@ -57,6 +99,11 @@ body {
     display:block; 
 }
 
+h2{
+    color:white;
+    font-size: 1.5em
+}
+
 @media screen and (min-width: 400px){
     body{
         display:flex;
@@ -66,6 +113,7 @@ body {
     }
     .questionImage{
         width: 80vw;
+        height: 40vh; 
     }
     h1{
         width:100vw;
@@ -80,3 +128,5 @@ body {
     }
     
 }
+
+

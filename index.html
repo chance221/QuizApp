@@ -7,39 +7,25 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/wireFrame.css"/>
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Prompt&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>Cooking Quiz App</h1>
     <section role="main" class = "quizz-space js-quiz-space">
-        <img  class="questionImage" src="media/chickenTemp.jpg" alt= "cooked chicken">
-        <form class="quizz-app-form" action="/some-server-endpoint" method="post">
-            <fieldset name = "question-and-answer">
-                <legend class="questions">Question 1 of 10</legend>
-                <label for="question">
-                <h2>What is the proper temperature of a fully cooked chicken?</h2> 
-                        <input type ="radio" name="answer-list" id="A" > A. 200 &#176 <br>
-                        <input type ="radio" name="answer-list" id="B" > B. 165 &#176 <br>
-                        <input type ="radio" name="answer-list" id ="C" > C. 200 &#176 <br>
-                        <input type ="radio" name="answer-list" id ="D" > D. 200 &#176 <br>
-                </label>
-                <div class = "anwser-submit">
-                    <button class= "answer-submit-btn js-answer-submit-btn" type="submit">
-                        <span class="btn-label">Check Answer and Move to Next Question</span>
-                    </button>
-                </div>
-                <div class="answer-space"> 
-                    <p>0 out of 0 answers correct so far</p>
-                </div>
-                <div class = "restart js-restart hide">
-                    <button class= "restart-btn js-restart-btn">
-                            <span class="btn-label">Restart Quiz</span>
-                    </button>
-                </div>
-                
-                
-            </fieldset>
-        </form>
+        <img  class="questionImage" src="media/cooking.jpg" alt= "cooking image">
+        <div class = "quiz-app-form">
+            <h2> Welcome to the Cooking Quiz App</h2>
+            <p>This quizz will test your cooking knowledge with a series of 10 questions.</p>
+            <p>To pass this quiz you need to score at least 70%.</p>
+            <p>Regardless of if you pass or fail please feel free to take the quiz again!</p>
+            <p>You will receive immediate feedback regarding the correct answer and a final score at the end.</p>
+            <p>Please press start to continue.</p>
+            <div class = "start js-start">
+                <button class= "restart-btn js-restart-btn">
+                        <span class="btn-label">Start The Quiz</span>
+                </button>
+            </div>
     </section>
     <div class = "answer-section js-answersection"></div>
 <script src = "js/quizzApp.js"></script>

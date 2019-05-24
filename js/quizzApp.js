@@ -1,13 +1,13 @@
 'use strict';
-
+/////////////////////////////////////////////////////////////DATA///////////////////////////////////////////////////////////
 const APPQUESTIONS = [
     {
         id:1,
         question:`What is the proper temperature of a fully cooked chicken?"`,
-        A:`200 &#176`,
-        B:`165 &#176`,
-        C:`140 &#176`,
-        D:`180 &#176`,
+        A:`200 degrees fahrenheit`,
+        B:`165 degrees fahrenheit`,
+        C:`140 degrees fahrenheit`,
+        D:`180 degrees fahrenheit`,
         imgSrc: "media/chickenTemp.jpg", 
         alt: "cooked chicken" 
     },
@@ -15,7 +15,7 @@ const APPQUESTIONS = [
     {
         id:2,
         question:`How many cups in a quart?`,
-        A:4,
+        A:`4`,
         B:6,
         C:10,
         D:3,
@@ -27,15 +27,12 @@ const APPQUESTIONS = [
     {
         id:3,
         question:`What is a safe temperature for pork`,
-        A:`190 &#176`,
-        B:`150 &#176`,
-        C:`165 &#176`,
-        D:`145 &#176`,
+        A:`190 degrees fahrenheit`,
+        B:`150 degrees fahrenheit`,
+        C:`165 degrees fahrenheit`,
+        D:`145 degrees fahrenheit`,
         imgSrc:"media/pork.jpg", 
         imgAlt:"cooked pork"
-        
-
-
     },
 
     {
@@ -47,19 +44,17 @@ const APPQUESTIONS = [
         D:`10 minutes`,
         imgSrc:"media/timer.jpg", 
         imgAlt:"cooking timer"
-
     },
 
     {
         id:5,
         question:`How long should you cook shrimp?`,
-        A:`Until flesh is pearly & opaque`,
+        A:`until flesh is pearly & opaque`,
         B:`6 minutes`,
-        C:`Until black`,
-        D:`Just keep cooking it`,
+        C:`until black`,
+        D:`just keep cooking it`,
         imgSrc:"media/shrimp.jpg", 
         imgAlt:"cooked shrimp"
-
     },
 
     {
@@ -76,20 +71,19 @@ const APPQUESTIONS = [
     {
         id:7,
         question:`What what temperature is steak cooked to medium?`,
-        A:`170-175 &#176`,
-        B:`120-125 &#176`,
-        C:`155-160 &#176`,
-        D:`145-150 &#176`,
+        A:`170-175 degrees fahrenheit`,
+        B:`120-125 degrees fahrenheit`,
+        C:`155-160 degrees fahrenheit`,
+        D:`145-150 degrees fahrenheit`,
         imgSrc:"media/steak.jpg", 
         imgAlt:"cooked steak"
-
     },
 
     {
         id:8,
         question:`How many teaspoons in a tablespoon?`,
         A:2,
-        B:3,
+        B:`3`,
         C:6,
         D:4,
         imgSrc:"media/teaspoon.jpg", 
@@ -122,56 +116,229 @@ const APPQUESTIONS = [
 ]
 
 const APPANSWERS = [
-    `165 &#176`,
-    4,
-    `145 &#176`,
+    `165 degrees fahrenheit`,
+    `4`,
+    `145 degrees fahrenheit`,
     `3 minutes`,
-    `Until flesh is pearly & opaque`,
+    `until flesh is pearly & opaque`,
     `Butter`,
-    `155-160 &#176`,
-    3,
+    `155-160 degrees fahrenheit`,
+    `3`,
     `To cut into thin match-like sticks about 2 inches long`,
     `To brown food quickly on all sides using high heat`,
 ]
 
+/////////////////////////////////////////////////////////////DATA End///////////////////////////////////////////////////////////
 
-// What needs to happen?
 
-// 1.Need a variable to keep track of question number, the correct answers and the final score
-//2. need to set tempelate for the question HTML (including what question the user is on)
-//3. Need to set tempelate for the correct answers (need to show current and final score)
-//4. Need to set tempelate for opening screen (give basic reasoning for app and instructions)
-//5. Need to set tempelate for closing results screen.(including an option to start over toggle restart div class to un-hide)
-//6. Need to write a function to check on the answers. (function needs to give feedback to current correct answer and current score)
-//7. Need to write a function to render the correct content to the screen. (Cannot allow users to go back or restart until the end)
-//8. 
+////////////////////////////////////////////// Variables///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//still need to make sure string literals are updated
-function questionTemp(questions, answers, questionsAnswered){
-    return
-    `<form class="quizz-app-form" action="/some-server-endpoint" method="post">
-    <fieldset name = "question-and-answer">
-        <legend class="questions">Question 1 of 10</legend>
-        <label for="question">
-        <h2>What is the proper temperature of a fully cooked chicken?</h2> 
-                <input type ="radio" name="answer-list" id="A" > A. 200 &#176 <br>
-                <input type ="radio" name="answer-list" id="B" > B. 165 &#176 <br>
-                <input type ="radio" name="answer-list" id ="C" > C. 200 &#176 <br>
-                <input type ="radio" name="answer-list" id ="D" > D. 200 &#176 <br>
-        </label>
-        <div class = "answer-submit">
-            <button class= "answer-submit-btn js-answer-submit-btn" type="submit">
-                <span class="btn-label">Check Answer and Move to Next Question</span>
-            </button>
-        </div>
-        <div class="answer-space"> 
-            <p>0 out of 0 answers correct so far</p>
-        </div>
-        <div class = "restart js-restart hide">
-            <button class= "restart-btn js-restart-btn">
-                    <span class="btn-label">Restart Quiz</span>
-            </button>
-        </div>
-    </fieldset>
-</form>`
+let totalQuestions = 10;
+let correctAnswers = 0;
+let currentQuestionNumberIndex = 0;
+let questionNumber = (currentQuestionNumberIndex + 1);
+
+/////////////////////////////////////////////////////////////Variables End///////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////Functions///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function quizzStart(){
+    $('.js-start').click(function(){
+        console.log("starting quiz");
+        
+        nextQuestion();
+    });
 }
+
+function nextQuestion(){
+    
+    console.log('running next question');
+    $('.quizz-space').empty();
+    const question = APPQUESTIONS[currentQuestionNumberIndex];
+
+    const questionsAnswered = currentQuestionNumberIndex;
+
+    $('.quizz-space').html(questionTemp(question, correctAnswers, questionsAnswered));
+}
+
+function questionTemp(questions, correctAnswers, questionsAnswered){
+    
+    console.log('running questionTemp');
+    
+    return`
+    <img  class="questionImage" src=${questions.imgSrc} alt=${questions.imgAlt}>
+    <form class="quizz-app-form">
+        <fieldset name = "question-and-answer">
+            <legend class="questions">Question ${questions.id} of 10</legend>
+            
+                <h2>${questions.question}</h2> 
+                <label>
+                    <input type ="radio" name="answer-list" id="A" value="" checked="checked"> A.<span>${questions.A}</span>
+                </label><br><br>
+                <label>
+                    <input type ="radio" name="answer-list" id="B" > B.<span>${questions.B}</span>
+                </label><br><br>
+                <label>
+                    <input type ="radio" name="answer-list" id ="C" > C.<span>${questions.C}</span>
+                </label><br><br>
+                <label>
+                    <input type ="radio" name="answer-list" id ="D" > D.<span>${questions.D}</span>
+                </label><br><br>
+                <div class = "answer-submit">
+                    <button class= "answer-submit-btn js-answer-submit-btn" type="submit">
+                        <span class="btn-label">Check Answer</span>
+                    </button>
+                </div>
+                <div class="answer-space"> 
+                    <p>${correctAnswers} out of ${questionsAnswered} answers correct so far</p>
+                </div>
+        </fieldset>
+    </form>`
+}
+
+function itterateScore(){
+    ++correctAnswers;
+    console.log('score itterated');
+}
+
+
+function itterateQuestions(){
+    ++currentQuestionNumberIndex;
+    console.log('Question Index Itterated');
+}
+
+function checkAnswer(answer) {
+    
+    console.log('checking answer')
+
+    if(answer.text() === APPANSWERS[currentQuestionNumberIndex]){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function handleSubmit(correctAnswers, question, questionsAnswered){
+    
+    console.log('running check answer')
+
+    $('.quizz-space').on('click', '.js-answer-submit-btn', function(event){
+
+        event.preventDefault();
+
+        const answer = $('input:checked').siblings('span');
+
+        const rightAnswer = checkAnswer(answer);
+        
+        if(rightAnswer){
+                generateCorrectMessage();
+                itterateScore();
+                itterateQuestions();
+        } else{
+                generateIncorrectMessage(); 
+                itterateQuestions();
+        }
+    })
+}
+
+function handleNextClick(){
+    $('.quizz-space').on('click', '.js-next-btn', function(event){
+        
+        console.log('next click registered');
+
+        if(currentQuestionNumberIndex < totalQuestions){
+            nextQuestion();
+        } else {
+            generateResultsPage(correctAnswers, totalQuestions);    
+        }
+    })
+}
+
+function generateCorrectMessage(){
+    
+    console.log("correct answer running");
+
+    $('.quizz-space').html(correctAnswerTempelate);
+}
+
+function generateIncorrectMessage(){
+    
+    console.log("incorrect answer running");
+
+    $('.quizz-space').html(incorrectFeedbackTemplate(currentQuestionNumberIndex));
+    
+}
+
+function generateResultsPage(correctAnswers, totalQuestions){
+    console.log("generating results running");
+    
+    resetQuiz(); 
+    
+    let resultsPercentage = correctAnswers/totalQuestions;
+
+    if(resultsPercentage >= .7){
+        $('.quizz-space').html(passedTempelate);
+    } else{
+        $('.quizz-space').html(failTempelate); 
+    }
+
+    return resultsPercentage;
+}
+
+function resetQuiz(){
+    $('.quizz-space').on('click', '.js-reset-btn', function(event){
+        currentQuestionNumberIndex = 0;
+        correctAnswers = 0;
+        nextQuestion();
+    })
+}
+
+const passedTempelate =
+`<section class="feedback-page" role="main">
+    <h2>Great Job! You are well on your way to becomming a master in the Kitchen but feel free to take the quiz again</h2>
+    <img class = "feedbackImage" src="media/congrats.jpg" alt="congratulations meme">
+    <div class = "nextBtnSection">
+        <button class="js-reset-btn">Restart Quiz</button>
+    </div>    
+</section>`;
+
+const failTempelate = 
+`<section class="feedback-page" role="main">
+    <h2>Not quite a master chef yet but you are well on your way! Keep leaning by taking the quiz again</h2>
+    <img class = "feedbackImage" src="media/fail.jpg" alt="matthew mcconaughey meme">
+    <div class = "nextBtnSection">
+        <button class="js-reset-btn">Restart Quiz</button>
+    </div>
+</section>`;
+
+const correctAnswerTempelate =
+`<section class="feedback-page" role="main">
+    <h2>Correct!</h2>
+    <img width="400" class = "feedbackImage" src="media/correct.jpg" alt="success fist pump baby">
+    <div class = "nextBtnSection">
+        <button class="js-next-btn">Next Question</button>
+    </div>
+</section>`;
+
+function incorrectFeedbackTemplate(currentQuestionNumberIndex) {
+    return `
+      <section class="feedback-page" role="main">
+        <img width="400" height="400" class = "feedbackImage" src="media/incorrect.jpg" alt="incorrect meme showing a cat wearing a tophat">
+        <h2>Whoops! Looks like the answer was ${APPANSWERS[currentQuestionNumberIndex]}.</h2>
+        <div class = "nextBtnSection">
+            <button class="js-next-btn">Next Question</button>
+        </div>
+      </section>`;
+  }
+
+function quizzAppFlow(){
+    quizzStart();
+    handleSubmit();
+    handleNextClick()
+}
+
+
+quizzAppFlow();
