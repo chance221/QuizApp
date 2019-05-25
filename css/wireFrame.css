@@ -3,14 +3,16 @@
     font-family: 'Gothic A1', sans-serif;
 }
 
-html { 
-    background: url(../media/bg.jpg) no-repeat center center fixed; 
-    height:100%;
+
+  
+html{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../media/bg.jpg);
+    height:100%; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  } 
+  }
 
 /* .bgImg{
     
@@ -80,9 +82,9 @@ fieldset{
     margin-left:10px;
     margin-right:10px;
     text-align:center;
-    width:80%;
-    max-width: 400px;
-    height:80%;
+    width:100%;
+    max-width: 600px;
+    max-height:500px;
 }
 
 label:hover{
@@ -144,14 +146,11 @@ h2{
         
     }
     
-    h1{
+    /* h1{
         width:100vw;
         height:8vh;
-    }
+    } */
 
-}
-@media screen and (min-width: 700px){
-    
 }
 
 
