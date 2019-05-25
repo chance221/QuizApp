@@ -317,7 +317,7 @@ const failTempelate =
 const correctAnswerTempelate =
 `<section class="feedback-page" role="main">
     <h2>Correct!</h2>
-    <img width="400" class = "feedbackImage" src="media/correct.jpg" alt="success fist pump baby">
+    <img class = "feedbackImage" src="media/correct.jpg" alt="success fist pump baby">
     <div class = "nextBtnSection">
         <button class="js-next-btn">Next Question</button>
     </div>
@@ -326,7 +326,7 @@ const correctAnswerTempelate =
 function incorrectFeedbackTemplate(currentQuestionNumberIndex) {
     return `
       <section class="feedback-page" role="main">
-        <img width="400" height="400" class = "feedbackImage" src="media/incorrect.jpg" alt="incorrect meme showing a cat wearing a tophat">
+        <img class = "feedbackImage" src="media/incorrect.jpg" alt="incorrect meme showing a cat wearing a tophat">
         <h2>Whoops! Looks like the answer was ${APPANSWERS[currentQuestionNumberIndex]}.</h2>
         <div class = "nextBtnSection">
             <button class="js-next-btn">Next Question</button>
@@ -340,5 +340,4 @@ function quizzAppFlow(){
     handleNextClick()
 }
 
-
-quizzAppFlow();
+$(quizzAppFlow);

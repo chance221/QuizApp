@@ -3,35 +3,49 @@
     font-family: 'Gothic A1', sans-serif;
 }
 
+html { 
+    background: url(../media/bg.jpg) no-repeat center center fixed; 
+    height:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } 
+
+/* .bgImg{
+    
+  } */
+
 .feedback-page{
     
     flex-direction: column;
     align-content: center; 
     justify-content: space-between;
-    
     align-self:center;
 }
 
 h1{
     font-family: 'Prompt', sans-serif;
-    padding-bottom: 2px;
-    background-color:#FFD0B8;
-    color:rgba(33, 96, 148, 0.664);
-    margin-top: -10px;
-    text-align: center
+    /* padding-bottom: 2px; */
+    background-color:gray;
+    color:white;
+    text-align: center;
+    width:100%;
+    height:auto;
+    margin-bottom:15px;
+    vertical-align: center;
 }
 
 body {
-    display: inline-block;
     margin:0;
     text-align:center;
-    background-color:#5D5DB3;
-    color:white
+    color:white;
+    font-size: 19px
 }
 
 button{
-    height: 50px;
-    width: 200px;
+    height: 25px;
+    width: 175px;
     border-radius: 12px;
     border:1px solid #d6bcd6;
     cursor: pointer;
@@ -41,16 +55,18 @@ button{
     box-shadow: 3px 4px 0px 0px #899599;
     text-shadow:0px 1px 0px #e1e2ed;
     font-size: 20px;
+    cursor: url(../media/whisk-cooking-tool.png), pointer;
 
 }
 
 .questionImage{
-    max-width: 50vw;
-    max-height: 30vh; 
+    width:90%;
+    max-width: 400px;
+    height:auto;
     margin: 10px;
     margin-bottom: 30px;
     border-radius: 50%;
-    border: 2px solid #FFD0B8; 
+    border: 2px solid grey; 
 }
 
 fieldset{
@@ -58,11 +74,27 @@ fieldset{
 }
 
 .feedbackImage{
-    border: 2px solid #FFD0B8; 
-    margin-bottom:100px;
-    margin-top: 100px;
+    border: 2px solid grey; 
+    margin-top:60px;
+    margin-bottom:60px;
+    margin-left:10px;
+    margin-right:10px;
     text-align:center;
+    width:80%;
+    max-width: 400px;
+    height:80%;
 }
+
+label:hover{
+    background-color:white;
+    text-transform:capitalize;
+    color:black
+    
+}
+label{
+    cursor: url(../media/whisk-cooking-tool.png), pointer;
+}
+
 
 .quizz-space{
     align-self:center;
@@ -111,10 +143,7 @@ h2{
         align-items: center;
         
     }
-    .questionImage{
-        width: 80vw;
-        height: 40vh; 
-    }
+    
     h1{
         width:100vw;
         height:8vh;
@@ -122,10 +151,6 @@ h2{
 
 }
 @media screen and (min-width: 700px){
-    .questionImage{
-        width: 30vw;
-        height: 30vh;
-    }
     
 }
 
